@@ -1,0 +1,49 @@
+.df {
+    display: flex;
+}
+
+.ffr {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ffc {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ai {
+    display: flex;
+    align-items: center;
+}
+
+.jc {
+    display: flex;
+    justify-content: center;
+}
+
+.ai-jc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fx1 {
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.fx2 {
+    box-sizing: border-box;
+    flex: 2;
+}
+
+.fs0 {
+    flex-shrink: 0;
+}
+.jcsa{
+    justify-content: space-around;
+}
+.jcsb{
+    justify-content: space-between;
+}

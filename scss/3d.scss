@@ -1,0 +1,11 @@
+.reverseLr {
+    transform: scaleX(-1)
+}
+
+.reverseTb {
+    transform: scaleY(-1)
+}
+
+// 负的scaleY上下对称和X左右对称
+// 2d的角度只有z，2d的平移可以x y
+// rotate3d和translate3d+动画实现点线面体的复杂运动

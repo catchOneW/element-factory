@@ -1,0 +1,6 @@
+1
+projname不要取gulp
+2
+gulp全局和本地都要装
+3
+@for $px from 10 to 101这也太蛋疼了吧右边是小于

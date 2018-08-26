@@ -1,0 +1,35 @@
+$dirs:( "t": "top", "r": "right", "b": "bottom", "l": "left");
+$colors:( "b":black, "w":white, "g":gray,
+ "pink": rgb(255, 93, 96), "red":rgb(255, 37, 25), "red2":rgb(166, 20, 17));
+$fontSizes:(28, 35);
+$widths:(25, 50, 100, 200, 300);
+$hights:(25, 50, 100, 200, 300);
+$pmSizes:(10, 20, 30, 36, 40, 60);
+@each $alis,
+$color in $colors {
+    .color-#{$alis} {
+        color: $color;
+    }
+}
+
+@each $alis,
+$color in $colors {
+    .bg-#{$alis} {
+        background: $color;
+    }
+}
+
+@mixin wh($w, $h) {
+    width: #{$w}px;
+    height: #{$h}px;
+}
+
+@import 'reset.scss';
+@import 'flex.scss';
+// @import 'grid.scss';
+// @import 'float.scss';
+@import 'position.scss';
+@import 'font.scss';
+@import 'box.scss';
+@import 'shape.scss';
+// @import 'test.scss';

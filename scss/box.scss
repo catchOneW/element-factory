@@ -1,0 +1,121 @@
+//box w h p(算宽) m(不算宽)
+.bsbb {
+    box-sizing: border-box;
+}
+
+@for $n from 1 to 12 {
+    .col#{$n} {
+        width: $n*100/12#{'%'};
+        box-sizing: border-box;
+    }
+}
+
+@each $px in $hights {
+    .h#{$px} {
+        height: #{$px}px;
+    }
+}
+
+@each $px in $widths {
+    .w#{$px} {
+        width: #{$px}px;
+    }
+}
+
+@each $px in $pmSizes {
+    .pd#{$px} {
+        padding: #{$px}px;
+    }
+    .pdtb#{$px} {
+        padding: #{$px}px 0;
+    }
+    .pdlr#{$px} {
+        padding: 0 #{$px}px;
+    }
+}
+
+@each $alis,
+$dir in $dirs {
+    @each $px in $pmSizes {
+        .m#{$alis}#{$px} {
+            margin-#{$dir}: #{$px}px;
+        }
+        .pd#{$alis}#{$px} {
+            padding-#{$dir}: #{$px}px;
+        }
+    }
+}
+
+@each $alis,
+$dir in $dirs {
+    .m#{$alis}a {
+        margin-#{$dir}: auto;
+    }
+}
+
+.ma {
+    margin: auto;
+}
+
+.mlra {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mtba {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@each $alis,
+$dir in $dirs {
+    .bd#{$alis} {
+        border-#{$dir}: 1px solid #ccc;
+    }
+} 
+//bd
+.bd {
+    border: 1px solid #ccc;
+}
+
+.bs {
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.br5 {
+    border-radius: 5px;
+}
+
+.br10 {
+    border-radius: 10px;
+} //img
+.h100p {
+    height: 100%;
+}
+
+.w100p {
+    width: 100%;
+}
+
+.wh100p {
+    width: 100%;
+    height: 100%;
+} //scroll mask
+.oh {
+    overflow: hidden;
+}
+
+.oxa {
+    overflow-x: auto;
+}
+
+.oya {
+    overflow-y: auto;
+} // 
+.dib {
+    display: inline-block;
+}
+
+.wsn {
+    white-space: nowrap;
+}

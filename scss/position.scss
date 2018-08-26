@@ -1,0 +1,54 @@
+.por {
+    position: relative;
+}
+
+.poa {
+    position: absolute;
+}
+
+.poa50 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@each $alis,
+$dir in $dirs {
+    .#{$alis}#{0}{
+        position: absolute;
+        #{$dir}: 0;
+    }
+}
+
+@each $px in $pmSizes {
+    @each $alis,
+    $dir in $dirs {
+        .#{$alis}#{$px} {
+            position: absolute;
+            #{$dir}: #{$px}px;
+        }
+    }
+}
+
+.fxt {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.fxb {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.stt {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}

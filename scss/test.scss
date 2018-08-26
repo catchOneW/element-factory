@@ -1,0 +1,15 @@
+@for $px from 100 to 201 {
+    .w#{$px} {
+        width: #{$px}px;
+    }
+    .h#{$px} {
+        height: #{$px}px;
+    } 
+    //  .lh#{$px} {
+    //      line-height: #{$px}px;
+    //  }
+     .wh#{$px} {
+         width: #{$px}px;
+         height: #{$px}px;
+     }
+}
