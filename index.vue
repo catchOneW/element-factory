@@ -1,7 +1,6 @@
 <template>
   <div class="">
-    <!-- <bg></bg> -->
-    <List></List>
+    <All></All>
   </div>
 </template>
 <script>
@@ -13,11 +12,11 @@ import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 import Modal from './compsHigh/Modal'
 import List from './DataDisplay/List'
+import All from './dataEntry/All'
 import bg from './page/bg'
 export default {
   components: {
-    bg,
-    List
+    All
   },
   data() {
     return {}
