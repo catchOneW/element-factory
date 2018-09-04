@@ -16,6 +16,7 @@
     "normalize.css": "^8.0.0",
     "sass-loader": "^7.1.0",
     "scss-flex": "^1.6.4",
-    "vue-amap": "^0.5.8"
+    "vue-amap": "^0.5.8",
+    "vue-baidu-map": "^0.21.11"
   }
 }

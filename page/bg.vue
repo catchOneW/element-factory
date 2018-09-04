@@ -15,11 +15,11 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.box {
-  height: 100vh;
-  background: url('../img/a.png') no-repeat center center;
-  background-size: cover;
-}
+// .box {
+//   height: 100vh;
+//   background: url('../img/a.png') no-repeat center center;
+//   background-size: cover;
+// }
 .box2 {
   height: 100vh;
   overflow-y: auto;
