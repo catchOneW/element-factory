@@ -18,7 +18,6 @@ export default {
     return {
       center: { lng: 0, lat: 0 },
       zoom: 15,
-      location: '北京',
       address: '',
       BMap: {}
     }
