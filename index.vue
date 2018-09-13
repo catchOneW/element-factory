@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <MutiUpload></MutiUpload>
+    <permision></permision>
   </div>
 </template>
 <script>
@@ -17,10 +17,14 @@ Vue.use(BaiduMap, {
   ak: 'X2qlPmBEOyq8dKU1XLnFDFPBxS0aGucc'
 })
 
+
+
 import MutiUpload from './dataEntry/MutiUpload'
+import permision from './dataDisplay/permision'
 export default {
   components: {
-    MutiUpload
+    MutiUpload,
+    permision
   },
   data() {
     return {}
