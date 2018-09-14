@@ -7,10 +7,12 @@
 
 <script>
 import _ from 'lodash'
+import moment from 'moment'
 export default {
   created() {
     var object = { a: 1, b: '2', c: 3 }
     console.log(_.pick(object, ['a', 'c']))
+    console.log(moment().format('L'))
   },
   data() {
     return {
