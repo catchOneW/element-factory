@@ -1,12 +1,14 @@
 <template>
+  <div>
     <div>
-        <div>
-            用户名{{userName}}
-        </div>
+      用户名{{userName}}
     </div>
+  </div>
 </template>
 
 <script>
+import validate from 'validate.js'
+
 export default {
   data() {
     return {
@@ -15,6 +17,8 @@ export default {
   },
   created() {
     this.userName = this.$route.query.userName
+
+    console.log(validate.capitalize("foobar"))
   }
 }
 </script>

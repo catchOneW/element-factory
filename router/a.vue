@@ -3,7 +3,6 @@
     <input type="text" v-model="userName">
     <button @click="go">传参数到b页面</button>
 <button v-stream:click="{ subject: plus$, data: someData }">+</button>
-
   </div>
 </template>
 
