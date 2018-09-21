@@ -14,6 +14,11 @@ Vue.use(BaiduMap, {
 Vue.use(VueRx)
 
 
+
+//
+import RichText from './src/dataEntry/RichText.vue'
+Vue.component('RichText', RichText)
+
 import App from './src/App.vue';
 import A from './src/router/a.vue'
 import B from './src/router/b.vue'
@@ -23,10 +28,10 @@ const routes = [
     { path: '/b', component: B }
 ]
 const router = new VueRouter({
-    routes 
+    routes
 })
 const app = new Vue({
-    el:'#app',
+    el: '#app',
     router,
     render: h => h(App)
 })
