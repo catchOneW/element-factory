@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
-    <RichText></RichText>
+    <singleImgUp></singleImgUp>
+    <mutiImgUp></mutiImgUp>
   </div>
 </template>
 <script>

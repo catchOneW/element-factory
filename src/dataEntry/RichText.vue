@@ -25,7 +25,7 @@ export default {
           ImageExtend: {
             loading: true,
             name: 'file',
-            action: `http://192.168.22.222:8080//file/singleUploadFileName`,
+            action: `http://192.168.22.222:8080/file/singleUploadFileName`,
             response: res => {
                 debugger
               return res.data

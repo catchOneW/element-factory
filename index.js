@@ -13,11 +13,13 @@ Vue.use(BaiduMap, {
 })
 Vue.use(VueRx)
 
-
-
 //
 import RichText from './src/dataEntry/RichText.vue'
 Vue.component('RichText', RichText)
+import singleImgUp from './src/dataEntry/singleImgUp.vue'
+Vue.component('singleImgUp', singleImgUp)
+import mutiImgUp from './src/dataEntry/mutiImgUp.vue'
+Vue.component('mutiImgUp', mutiImgUp)
 
 import App from './src/App.vue';
 import A from './src/router/a.vue'
