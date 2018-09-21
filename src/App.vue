@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <router-view></router-view> -->
     <singleImgUp></singleImgUp>
-    <mutiImgUp></mutiImgUp>
+    <!-- <mutiImgUp></mutiImgUp> -->
   </div>
 </template>
 <script>

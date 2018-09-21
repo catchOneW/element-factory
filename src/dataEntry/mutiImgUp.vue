@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-upload ref="upComp" class="aaaaaaaa" multiple :auto-upload="false" action="http://192.168.22.222:8080/file/singleUploadFileName" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove" :file-list="fileList" :on-change="change">
+        <el-upload ref="upComp" class="upComp" multiple :auto-upload="false" action="http://192.168.22.222:8080/file/singleUploadFileName" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove" :file-list="fileList" :on-change="change">
             <i class="el-icon-plus"></i>
         </el-upload>
         <el-dialog :visible.sync="dialogVisible">
@@ -18,21 +18,21 @@ export default {
       dialogImageUrl: '',
       dialogVisible: false,
       fileList: [
-        {
-          name: 1,
-          url:
-            'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        },
-        {
-          name: 1,
-          url:
-            'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        },
-        {
-          name: 1,
-          url:
-            'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        }
+        // {
+        //   name: 1,
+        //   url:
+        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
+        // },
+        // {
+        //   name: 1,
+        //   url:
+        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
+        // },
+        // {
+        //   name: 1,
+        //   url:
+        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
+        // }
       ]
     }
   },
@@ -50,27 +50,39 @@ export default {
       //     return
       //   }
       //   this.imageUrls.push(URL.createObjectURL(file))
-
       console.log(file)
       console.log(fileList)
-    },
-    submit() {
-      console.log(this.fileList)
+      this.canAdd(fileList)
     },
     handleRemove(file, fileList) {
       console.log(file)
       console.log(fileList)
+      this.canAdd(fileList)
+    },
+    canAdd(fileList) {
+      this.fileList = fileList
+      let a = this.$el.querySelector('.el-upload.el-upload--picture-card')
+      if (this.fileList.length == 1) {
+        a.style.display = 'none'
+      } else {
+        a.style.display = 'inline-block'
+      }
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
       this.dialogVisible = true
+    },
+    submit() {
+      console.log(this.fileList)
     }
   }
 }
 </script>
 
-<style>
-.el-upload.el-upload--picture-card {
-  display: none;
-}
+<style lang="scss" scoped>
+// .upComp {
+//   .el-upload--picture-card {
+//     display: none;
+//   }
+// }
 </style>
