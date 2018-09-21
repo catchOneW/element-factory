@@ -2,7 +2,7 @@
   <div>
     <input type="text" v-model="userName">
     <button @click="go">传参数到b页面</button>
-<button v-stream:click="{ subject: plus$, data: someData }">+</button>
+    <button v-stream:click="{ subject: plus$, data: someData }">+</button>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import { Subject, Observable } from 'rxjs'
 import { map, startWith, scan } from 'rxjs/operators'
 
 export default {
-    domStreams: ['plus$'],
+  domStreams: ['plus$'],
   subscriptions() {
     // 声明接收的 Subjects
     this.plus$ = new Subject()

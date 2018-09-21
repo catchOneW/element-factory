@@ -17,11 +17,9 @@ export default {
   },
   created() {
     this.userName = this.$route.query.userName
-
-    console.log(validate.capitalize("foobar"))
+    console.log(validate.capitalize('foobar'))
   }
 }
 </script>
-
 <style>
 </style>
