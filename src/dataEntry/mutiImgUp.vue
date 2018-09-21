@@ -1,14 +1,14 @@
 <template>
-    <div>
-        <el-upload ref="upComp" class="upComp" multiple :auto-upload="false" action="http://192.168.22.222:8080/file/singleUploadFileName" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove" :file-list="fileList" :on-change="change">
-            <i class="el-icon-plus"></i>
-        </el-upload>
-        <el-dialog :visible.sync="dialogVisible">
-            <img width="100%" :src="dialogImageUrl" alt="">
-        </el-dialog>
+  <div>
+    <el-upload ref="upComp" class="upComp" multiple action="" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-success="handleSuccess" :on-remove="handleRemove" :file-list="fileList" :before-upload="beforeAvatarUpload">
+      <i class="el-icon-plus"></i>
+    </el-upload>
+    <el-dialog :visible.sync="dialogVisible">
+      <img width="100%" :src="dialogImageUrl" alt="">
+    </el-dialog>
 
-        <button @click="submit">提交</button>
-    </div>
+    <button @click="submit">提交</button>
+  </div>
 </template>
 
 <script>
@@ -37,32 +37,45 @@ export default {
     }
   },
   methods: {
-    change(file, fileList) {
-      //   const isJPG = file.type === 'image/jpeg'
-      //   const isLt2M = file.size / 1024 / 1024 < 10
-      //   if (!isJPG) {
-      //     this.$message.error('上传头像图片只能是 JPG 格式!')
-      //   }
-      //   if (!isLt2M) {
-      //     this.$message.error('上传头像图片大小不能超过 10MB!')
-      //   }
-      //   if (this.imageUrls.length >= 5) {
-      //     return
-      //   }
-      //   this.imageUrls.push(URL.createObjectURL(file))
+    handleSuccess(response, file, fileList) {
+      console.log(response)
       console.log(file)
       console.log(fileList)
-      this.canAdd(fileList)
+      this.fileList = fileList
+      this.canAdd()
+    },
+    beforeAvatarUpload(file) {
+      const isJPG = file.type === 'image/jpeg' || file.type === 'image/png'
+      const isIn10Mb = file.size / 1024 / 1024 < 10
+      const isLengthLt5 = this.fileList.length <= 5
+      if (!isJPG) {
+        console.log('只能上传图片!')
+        return false
+      }
+      if (!isIn10Mb) {
+        console.log('上传头像图片大小不能超过 10MB!')
+        return false
+      }
+
+      if (!isLengthLt5) {
+        console.log('最多只能上传5张图片!')
+        return false
+      }
+      this.fileList.push({
+        name: file.name,
+        url: URL.createObjectURL(file),
+        file: file
+      })
+      debugger
+      return false
     },
     handleRemove(file, fileList) {
-      console.log(file)
-      console.log(fileList)
-      this.canAdd(fileList)
-    },
-    canAdd(fileList) {
       this.fileList = fileList
+      this.canAdd()
+    },
+    canAdd() {
       let a = this.$el.querySelector('.el-upload.el-upload--picture-card')
-      if (this.fileList.length == 1) {
+      if (this.fileList.length >= 5) {
         a.style.display = 'none'
       } else {
         a.style.display = 'inline-block'
