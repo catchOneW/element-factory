@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
-    <mutiImgUp :urls="urls" @addImg="addImg" @removeImg="removeImg"></mutiImgUp>
+    <mutiImgUp ref="up" :limit="2"></mutiImgUp>
     <button @click="open">打开</button>
     <button @click="submit">提交</button>
   </div>
@@ -16,24 +16,16 @@ export default {
   },
   methods: {
     submit() {
-      console.log(this.urls)
+      console.log(this.$refs.up.fileList)
     },
-    // fileListGen() {
-    //   this.fileList = this.urls.map((e, index) => {
-    //     return {
-    //       name: index,
-    //       url: e
-    //     }
-    //   })
-    // },
-    addImg(file) {
-      this.urls.push(URL.createObjectURL(file))
-    },
-    removeImg(fileList) {
-      this.urls = fileList.map(e => e.url)
-      console.log(this.urls);
-    },
-    open() {}
+    open(file) {
+      this.$refs.up.fileList = this.urls.map((e, index) => {
+        return {
+          name: index,
+          url: e
+        }
+      })
+    }
   }
 }
 </script>
