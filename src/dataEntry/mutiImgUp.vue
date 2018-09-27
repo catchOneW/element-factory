@@ -22,9 +22,19 @@ export default {
   methods: {
     onChange(f, fl) {
       this.fileList = fl
+      if (this.fileList.length == this.limit) {
+        this.$el.querySelector(
+          '.el-upload.el-upload--picture-card'
+        ).style.display = 'none'
+      }
     },
     onRemove(f, fl) {
       this.fileList = fl
+      if (this.fileList.length < this.limit) {
+        this.$el.querySelector(
+          '.el-upload.el-upload--picture-card'
+        ).style.display = 'inline-block'
+      }
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
