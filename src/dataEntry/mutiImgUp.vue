@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-upload action="" multiple list-type="picture-card" :on-preview="handlePictureCardPreview" :before-upload="checkType" :file-list="fileList" :on-change="onChange" :on-remove="onRemove">
+    <el-upload action="" multiple list-type="picture-card" :limit="limit" :on-preview="handlePictureCardPreview" :before-upload="checkType" :file-list="fileList" :on-change="onChange" :on-remove="onRemove">
       <i class="el-icon-plus"></i>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
@@ -42,10 +42,10 @@ export default {
     },
     checkType(file) {
       //checkType一旦触发，fileList会多出一个percentage=0的对象
-      if (this.fileList.length > this.limit) {
-        this.$message.error(`只能上传${this.limit}张图片`)
-        return false
-      }
+      // if (this.fileList.length > this.limit) {
+      //   this.$message.error(`只能上传${this.limit}张图片`)
+      //   return false
+      // }
       //
       const isJPG = file.type === 'image/jpeg' || file.type === 'image/png'
       const isLt = file.size / 1024 / 1024 < 10
