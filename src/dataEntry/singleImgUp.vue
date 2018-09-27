@@ -18,21 +18,7 @@ export default {
       dialogImageUrl: '',
       dialogVisible: false,
       fileList: [
-        // {
-        //   name: 1,
-        //   url:
-        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        // },
-        // {
-        //   name: 1,
-        //   url:
-        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        // },
-        // {
-        //   name: 1,
-        //   url:
-        //     'http://test.hxfzsoft.com:10099/group1/M00/00/0A/wKgWNVukmpaAMZn9AAJfCE0YoEo135.jpg'
-        // }
+      
       ]
     }
   },
