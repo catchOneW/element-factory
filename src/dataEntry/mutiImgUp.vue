@@ -21,21 +21,24 @@ export default {
     }
   },
   methods: {
-    onChange(f, fl) {
-      this.fileList = fl
+    checkAdd() {
       if (this.fileList.length == this.limit) {
         this.$el.querySelector(
           '.el-upload.el-upload--picture-card'
         ).style.display = 'none'
-      }
-    },
-    onRemove(f, fl) {
-      this.fileList = fl
-      if (this.fileList.length < this.limit) {
+      } else {
         this.$el.querySelector(
           '.el-upload.el-upload--picture-card'
         ).style.display = 'inline-block'
       }
+    },
+    onChange(f, fl) {
+      this.fileList = fl
+      this.checkAdd()
+    },
+    onRemove(f, fl) {
+      this.fileList = fl
+      this.checkAdd()
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
