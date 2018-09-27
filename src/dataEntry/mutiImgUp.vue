@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-upload action="" multiple list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove" :before-upload="beforeAvatarUpload" :file-list="fileList">
+    <el-upload action="" multiple list-type="picture-card" :on-preview="handlePictureCardPreview" :before-upload="checkType" :file-list="fileList" :on-change="onChange" :on-remove="onRemove">
       <i class="el-icon-plus"></i>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
@@ -8,49 +8,56 @@
     </el-dialog>
   </div>
 </template>
+
 <script>
 export default {
-  props:['urls'],
+  props: ['urls', 'limit'],
   data() {
     return {
       dialogImageUrl: '',
-      dialogVisible: false
-    }
-  },
-  computed: {
-    fileList() {
-      return this.urls.map((e, index) => {
-        return {
-          name: index,
-          url: e
-        }
-      })
+      dialogVisible: false,
+      fileList: []
     }
   },
   methods: {
-    handleRemove(file, fileList) {
-      this.$emit('removeImg', fileList)
+    onChange(f, fl) {
+      this.fileList = fl
+    },
+    onRemove(f, fl) {
+      this.fileList = fl
     },
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
       this.dialogVisible = true
     },
-    beforeAvatarUpload(file) {
+    checkType(file) {
+      //checkType一旦触发，fileList会多出一个percentage=0的对象
+      if (this.fileList.length > this.limit) {
+        this.$message.error(`只能上传${this.limit}张图片`)
+        return false
+      }
+      //
       const isJPG = file.type === 'image/jpeg' || file.type === 'image/png'
       const isLt = file.size / 1024 / 1024 < 10
       if (!isJPG) {
         this.$message.error('只能上传图片!')
-        return
+        return false
       }
       if (!isLt) {
         this.$message.error('上传头像图片大小不能超过 10MB!')
-        return
+        return false
       }
-      this.$emit('addImg', file)
-      return false //阻止el组件的自动提交
+      this.fileList.push({
+        name: file.name,
+        url: URL.createObjectURL(file),
+        raw: file
+      })
+      //this.$emit('addImg', file)
+      return false
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
 </style>
