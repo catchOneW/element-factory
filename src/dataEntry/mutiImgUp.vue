@@ -2,6 +2,7 @@
   <div>
     <el-upload action="" multiple list-type="picture-card" :limit="limit" :on-preview="handlePictureCardPreview" :before-upload="checkType" :file-list="fileList" :on-change="onChange" :on-remove="onRemove">
       <i class="el-icon-plus"></i>
+      <div slot="tip" class="el-upload__tip">{{`最多只能上传${this.limit}张图片`}}</div>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
       <img width="100%" :src="dialogImageUrl" alt="">
