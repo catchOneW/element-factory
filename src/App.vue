@@ -11,8 +11,6 @@ export default {
   data() {
     return {
       urls: [
-        `http://test.hxfzsoft.com:10099/group1/M00/00/0D/wKgWNVurQoyAchKvAAJfCE0YoEo640.jpg`,
-        `http://test.hxfzsoft.com:10099/group1/M00/00/0D/wKgWNVurQoyAXx5sAAA85WKEw64880.jpg`
       ]
     }
   },
