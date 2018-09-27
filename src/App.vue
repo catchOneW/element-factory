@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
-    <mutiImgUp ref="up" :limit="2"></mutiImgUp>
+    <mutiImgUp ref="MutiRef" :limit="2"></mutiImgUp>
     <button @click="open">打开</button>
     <button @click="submit">提交</button>
   </div>
@@ -10,16 +10,17 @@
 export default {
   data() {
     return {
-      urls: [
-      ]
+      urls: ['']
     }
   },
   methods: {
     submit() {
-      console.log(this.$refs.up.fileList)
+      console.log(this.$refs.MutiRef.fileList)
+      let rawFileList = this.$refs.MutiRef.fileList.filter(x => x.raw)
+      let urlFileList = this.$refs.MutiRef.fileList.filter(x => !x.raw)
     },
     open(file) {
-      this.$refs.up.fileList = this.urls.map((e, index) => {
+      this.$refs.MutiRef.fileList = this.urls.map((e, index) => {
         return {
           name: index,
           url: e
