@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
-    <mutiImgUp ref="MutiRef" :limit="2"></mutiImgUp>
+    <!-- <mutiImgUp ref="MutiRef" :limit="2"></mutiImgUp>
     <button @click="open">打开</button>
-    <button @click="submit">提交</button>
+    <button @click="submit">提交</button> -->
+    <tableRowSpan></tableRowSpan>
   </div>
 </template>
 <script>

@@ -20,6 +20,8 @@ import singleImgUp from './src/dataEntry/singleImgUp.vue'
 Vue.component('singleImgUp', singleImgUp)
 import mutiImgUp from './src/dataEntry/mutiImgUp.vue'
 Vue.component('mutiImgUp', mutiImgUp)
+import tableRowSpan from './src/dataDisplay/tableRowSpan.vue'
+Vue.component('tableRowSpan', tableRowSpan)
 
 import App from './src/App.vue';
 import A from './src/router/a.vue'
