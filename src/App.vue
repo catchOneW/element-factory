@@ -4,7 +4,8 @@
     <!-- <mutiImgUp ref="MutiRef" :limit="2"></mutiImgUp>
     <button @click="open">打开</button>
     <button @click="submit">提交</button> -->
-    <tableRowSpan></tableRowSpan>
+    <!-- <tableRowSpan></tableRowSpan> -->
+    <permision></permision>
   </div>
 </template>
 <script>

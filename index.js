@@ -23,6 +23,9 @@ Vue.component('mutiImgUp', mutiImgUp)
 import tableRowSpan from './src/dataDisplay/tableRowSpan.vue'
 Vue.component('tableRowSpan', tableRowSpan)
 
+import permision from './src/dataDisplay/permision.vue'
+Vue.component('permision', permision)
+
 import App from './src/App.vue';
 import A from './src/router/a.vue'
 import B from './src/router/b.vue'
