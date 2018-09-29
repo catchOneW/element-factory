@@ -5,7 +5,8 @@
     <button @click="open">打开</button>
     <button @click="submit">提交</button> -->
     <!-- <tableRowSpan></tableRowSpan> -->
-    <permision></permision>
+    <!-- <permision></permision> -->
+    <mouseRight></mouseRight>
   </div>
 </template>
 <script>
