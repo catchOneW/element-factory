@@ -16,7 +16,7 @@
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
-    "rxjs": "^6.3.2",
+    "rxjs": "^5.6.0-forward-compat.5",
     "sass-loader": "^7.1.0",
     "scss-flex": "^1.6.4",
     "validate.js": "^0.12.0",
