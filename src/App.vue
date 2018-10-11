@@ -6,7 +6,8 @@
     <button @click="submit">提交</button> -->
     <!-- <tableRowSpan></tableRowSpan> -->
     <!-- <permision></permision> -->
-    <mouseRight></mouseRight>
+    <!-- <mouseRight></mouseRight> -->
+    <imgPreview></imgPreview>
   </div>
 </template>
 <script>

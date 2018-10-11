@@ -16,17 +16,25 @@ Vue.use(VueRx)
 //
 import RichText from './src/dataEntry/RichText.vue'
 Vue.component('RichText', RichText)
+
 import singleImgUp from './src/dataEntry/singleImgUp.vue'
 Vue.component('singleImgUp', singleImgUp)
+
 import mutiImgUp from './src/dataEntry/mutiImgUp.vue'
 Vue.component('mutiImgUp', mutiImgUp)
+
 import tableRowSpan from './src/dataDisplay/tableRowSpan.vue'
 Vue.component('tableRowSpan', tableRowSpan)
 
 import permision from './src/compsBase/permision.vue'
 Vue.component('permision', permision)
+
 import mouseRight from './src/compsBase/mouseRight.vue'
 Vue.component('mouseRight', mouseRight)
+
+
+import imgPreview from './src/compsBase/imgPreview.vue'
+Vue.component('imgPreview', imgPreview)
 
 import App from './src/App.vue';
 import A from './src/router/a.vue'

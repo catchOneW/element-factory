@@ -1,24 +1,27 @@
 <template>
-    <div>
-      
-        <el-table :data="tableData6" :span-method="arraySpanMethod" border style="width: 100%">
-            <el-table-column prop="id" label="ID" width="180">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名">
-            </el-table-column>
-            <el-table-column prop="amount1" sortable label="数值 1">
-            </el-table-column>
-            <el-table-column prop="amount2" sortable label="数值 2">
-            </el-table-column>
-            <el-table-column prop="amount3" sortable label="数值 3">
-            </el-table-column>
-        </el-table>
+  <div>
 
-        <el-table :data="tableData6" :span-method="objectSpanMethod" border style="width: 100%; margin-top: 20px">
-            <el-table-column prop="id" label="ID" width="180">
-            </el-table-column>
-        </el-table>
-    </div>
+    <p class="tac">最美社工投票结果</p>
+    <el-table :data="tableData6" :span-method="arraySpanMethod" border style="width: 100%">
+      <el-table-column prop="id" label="ID" width="180">
+      </el-table-column>
+      <el-table-column prop="name" label="姓名">
+      </el-table-column>
+      <el-table-column prop="amount1" sortable label="数值 1">
+      </el-table-column>
+      <el-table-column prop="amount2" sortable label="数值 2">
+      </el-table-column>
+      <el-table-column prop="amount3" sortable label="数值 3">
+      </el-table-column>
+    </el-table>
+
+
+    <p class="tac">最美社工投票列表</p>
+    <el-table :data="tableData6" :span-method="objectSpanMethod" border style="width: 100%; margin-top: 20px">
+      <el-table-column prop="id" label="ID" width="180">
+      </el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script>
