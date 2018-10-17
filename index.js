@@ -36,6 +36,14 @@ Vue.component('mouseRight', mouseRight)
 import imgPreview from './src/compsBase/imgPreview.vue'
 Vue.component('imgPreview', imgPreview)
 
+
+import barChart from './src/dataDisplay/barChart.vue'
+Vue.component('barChart', barChart)
+import pieChart from './src/dataDisplay/pieChart.vue'
+Vue.component('pieChart', pieChart)
+import scatterChart from './src/dataDisplay/scatterChart.vue'
+Vue.component('scatterChart', scatterChart)
+
 import App from './src/App.vue';
 import A from './src/router/a.vue'
 import B from './src/router/b.vue'
