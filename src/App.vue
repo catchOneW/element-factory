@@ -8,13 +8,19 @@
     <!-- <permision></permision> -->
     <!-- <mouseRight></mouseRight> -->
     <!-- <imgPreview></imgPreview> -->
-    <bar-chart :chartData="chartData" :options="options" :height="200"></bar-chart>
+    <!-- <bar-chart :chartData="chartData" :options="options" :height="200"></bar-chart>
 
     <pie-chart :chartData="chartData" :options="options" :height="200"></pie-chart>
 
     <scatter-chart :chartData="scatterData" :options="options" :height="200"></scatter-chart>
 
-    <button @click="fillData">Randomize</button>
+    <button @click="fillData">Randomize</button> -->
+    <div class="h300 por">
+      <lineChart></lineChart>
+    </div>
+    <div class="h300 por">
+      <pieChart></pieChart>
+    </div>
   </div>
 </template>
 <script>

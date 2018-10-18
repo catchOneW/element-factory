@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "chart.js": "^2.7.3",
+    "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.6",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1",
