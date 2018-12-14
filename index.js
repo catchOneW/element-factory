@@ -13,7 +13,13 @@ Vue.use(BaiduMap, {
 })
 Vue.use(VueRx)
 
+
+import {selectDropHide} from './src/directives/selectDropHide'
+Vue.directive('selectDropHide', selectDropHide)
 //
+import mobileSelect from './src/dataEntry/mobileSelect.vue'
+Vue.component('mobileSelect', mobileSelect)
+
 import RichText from './src/dataEntry/RichText.vue'
 Vue.component('RichText', RichText)
 

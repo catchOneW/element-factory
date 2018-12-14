@@ -15,24 +15,25 @@
     <scatter-chart :chartData="scatterData" :options="options" :height="200"></scatter-chart>
 
     <button @click="fillData">Randomize</button> -->
-    <div class="h300 por">
+    <!-- <div class="h300 por">
       <lineChart></lineChart>
     </div>
     <div class="h300 por">
       <pieChart></pieChart>
-    </div>
+    </div> -->
+    <mobileSelect></mobileSelect>
   </div>
 </template>
 <script>
-import { Observable } from 'rxjs'
+import { Observable } from "rxjs";
 
 export default {
   data() {
     return {
-      urls: [''],
+      urls: [""],
       options: {},
       chartData: {}
-    }
+    };
   },
   created() {
     // const dragDOM = document.getElementById('drag')
@@ -48,24 +49,24 @@ export default {
   },
   methods: {
     getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     },
     fillData() {
       this.chartData = {
         labels: [this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
-            label: 'Data One',
-            backgroundColor: '#f87979',
+            label: "Data One",
+            backgroundColor: "#f87979",
             data: [this.getRandomInt(), this.getRandomInt()]
           },
           {
-            label: 'Data One',
-            backgroundColor: '#f87979',
+            label: "Data One",
+            backgroundColor: "#f87979",
             data: [this.getRandomInt(), this.getRandomInt()]
           }
         ]
-      }
+      };
       this.scatterData = {
         labels: [this.getRandomInt(), this.getRandomInt()],
         datasets: [
@@ -86,7 +87,7 @@ export default {
             ]
           }
         ]
-      }
+      };
     }
     // submit() {
     //   console.log(this.$refs.MutiRef.fileList)
@@ -102,8 +103,8 @@ export default {
     //   })
     // }
   }
-}
+};
 </script>
 <style lang="scss">
-@import './scss/index.scss';
+@import "./scss/index.scss";
 </style>
